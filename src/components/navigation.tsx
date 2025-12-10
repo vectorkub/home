@@ -19,11 +19,11 @@ export default function Navigation() {
   }, [])
 
   const navLinks = [
-    { title: "Products", href: "#products" },
-    { title: "Services", href: "#services" },
-    { title: "Pricing", href: "#pricing" },
-    { title: "About", href: "#about" },
-    { title: "Careers", href: "#careers" },
+    { title: "Products", href: "/#products" },
+    { title: "Services", href: "/#services" },
+    { title: "Pricing", href: "/#pricing" },
+    { title: "About", href: "/#about" },
+    { title: "Careers", href: "/#careers" },
   ]
 
   return (
@@ -60,9 +60,9 @@ export default function Navigation() {
           >
             Contact
           </Link>
-          <Button 
+          <Button
             className="h-9 rounded-full bg-foreground px-4 text-xs font-semibold text-background transition hover:bg-foreground/90"
-            onClick={() => window.open(process.env.NEXT_PUBLIC_ACCOUNT_CENTER_URL || 'https://account.vectorkub.com', '_blank')}
+            onClick={() => window.open(process.env.NEXT_PUBLIC_ACCOUNT_CENTER_URL || 'https://accounts.vectorkub.com', '_blank')}
           >
             Account Center
           </Button>
@@ -110,9 +110,9 @@ export default function Navigation() {
               >
                 Contact
               </Link>
-              <Button 
+              <Button
                 className="w-full rounded-full bg-foreground py-3 text-sm font-semibold text-background transition hover:bg-foreground/90"
-                onClick={() => window.open(process.env.NEXT_PUBLIC_ACCOUNT_CENTER_URL || 'https://account.vectorkub.com', '_blank')}
+                onClick={() => window.open(process.env.NEXT_PUBLIC_ACCOUNT_CENTER_URL || 'https://accounts.vectorkub.com', '_blank')}
               >
                 Account Center
               </Button>

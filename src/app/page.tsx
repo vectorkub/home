@@ -187,15 +187,15 @@ export default function Home() {
                       className="h-full w-full object-cover"
                       loading="lazy"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-background/50 to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent dark:from-black/85 dark:via-black/50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
-                      <div className="rounded-full border border-border bg-background/50 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                      <div className="rounded-full border border-white/20 bg-black/50 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white/90 backdrop-blur-sm">
                         {slide.title}
                       </div>
-                      <p className="max-w-xl text-sm text-foreground/85 drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)]">
+                      <p className="max-w-xl text-sm text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.65)]">
                         {slide.description}
                       </p>
-                      <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+                      <div className="text-[11px] uppercase tracking-[0.2em] text-white/70">
                         {idx + 1} / {heroImages.length}
                       </div>
                     </div>
@@ -234,7 +234,7 @@ export default function Home() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background/80" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80" />
                   <div className="absolute left-4 bottom-4 inline-flex items-center gap-2 text-[11px]">
                     <span className="rounded-full border border-red-400/70 px-2 py-1 uppercase tracking-[0.16em] text-red-300 bg-red-500/10">
                       Live
@@ -280,14 +280,14 @@ export default function Home() {
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                   style={{ backgroundImage: `url(${card.image})` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/65 to-background/85" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/90" />
                 <div className="relative flex h-full flex-col justify-end gap-3 p-5">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/40 px-3 py-1 text-[11px] text-muted-foreground backdrop-blur">
-                    <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground" />
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[11px] text-white/80 backdrop-blur">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/60" />
                     {card.tag}
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">{card.title}</h3>
-                  <p className="min-h-[44px] text-sm leading-relaxed text-foreground/80 line-clamp-2">{card.description}</p>
+                  <h3 className="text-lg font-semibold text-white">{card.title}</h3>
+                  <p className="min-h-[44px] text-sm leading-relaxed text-white/90 line-clamp-2">{card.description}</p>
                 </div>
               </motion.div>
             ))}

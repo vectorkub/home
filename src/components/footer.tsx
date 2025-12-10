@@ -84,35 +84,35 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="mt-24 border-t border-white/10 bg-black/60 backdrop-blur">
+    <footer className="mt-24 border-t border-border bg-background/60 backdrop-blur">
       <div className="shell py-14">
         <div className="mb-12 grid gap-10 lg:grid-cols-[1.1fr_1fr]">
           <div className="space-y-6">
             <Link href="/" className="inline-flex items-center gap-2">
-              <Logo className="h-8 w-8 text-white" />
-              <span className="text-xl font-semibold text-white">Vectorkub</span>
+              <Logo className="h-8 w-8" />
+              <span className="text-xl font-semibold text-foreground">Vectorkub</span>
             </Link>
-            <p className="max-w-xl text-sm leading-relaxed text-white/60">
+            <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
               Software house for product engineering, AI, commerce, and fintech. We ship production-grade
               services and our own platforms for teams that need to move fast.
             </p>
-            <div className="flex flex-wrap items-center gap-3 text-xs text-white/60">
-              <span className="rounded-full border border-white/15 px-3 py-1">Global delivery</span>
-              <span className="rounded-full border border-white/15 px-3 py-1">Multi-tenant ready</span>
-              <span className="rounded-full border border-white/15 px-3 py-1">AI-native</span>
+            <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+              <span className="rounded-full border border-border px-3 py-1">Global delivery</span>
+              <span className="rounded-full border border-border px-3 py-1">Multi-tenant ready</span>
+              <span className="rounded-full border border-border px-3 py-1">AI-native</span>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4">
             {Object.entries(footerSections).map(([title, links]) => (
               <div key={title} className="space-y-3">
-                <h3 className="text-sm font-semibold text-white">{title}</h3>
-                <ul className="space-y-2 text-sm text-white/60">
+                <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   {links.map((link) => (
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="transition-colors hover:text-white"
+                        className="transition-colors hover:text-foreground"
                         target={link.href.startsWith("http") ? "_blank" : undefined}
                         rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       >
@@ -126,11 +126,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4 border-t border-border pt-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-4">
             <span>Vectorkub © {currentYear}</span>
             {bottomLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="transition-colors hover:text-white">
+              <Link key={link.name} href={link.href} className="transition-colors hover:text-foreground">
                 {link.name}
               </Link>
             ))}
@@ -142,7 +142,7 @@ export default function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/60 transition hover:border-white/40 hover:text-white"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition hover:border-foreground/40 hover:text-foreground"
                 aria-label={link.name}
               >
                 {link.icon}

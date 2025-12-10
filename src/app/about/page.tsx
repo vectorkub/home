@@ -30,18 +30,18 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative overflow-hidden border-b border-white/10">
+      <section className="relative overflow-hidden border-b border-border">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(236,72,153,0.08),transparent_35%)]" />
         <div className="shell py-20">
           <AnimatedSection>
             <div className="max-w-3xl space-y-5">
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-white/60">
+              <p className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/20 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                 About Vectorkub
               </p>
               <h1 className="text-balance text-[clamp(44px,6vw,64px)] font-black leading-[1] tracking-[-0.04em]">
                 We build software and ship products with you.
               </h1>
-              <p className="text-lg leading-relaxed text-white/60">
+              <p className="text-lg leading-relaxed text-muted-foreground">
                 A product-obsessed software house combining engineering, design, AI, and infrastructure. We deliver
                 services and ship our own applications to accelerate your roadmap.
               </p>
@@ -54,22 +54,22 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
           <AnimatedSection>
             <div className="space-y-5">
-              <h2 className="text-[clamp(28px,4vw,40px)] font-bold leading-tight text-white">
+              <h2 className="text-[clamp(28px,4vw,40px)] font-bold leading-tight text-foreground">
                 A mission to launch better products.
               </h2>
-              <p className="text-sm leading-relaxed text-white/65">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 We believe every team deserves production-grade quality from day one. That means thoughtful design
                 systems, resilient infra, measurable performance, and AI capabilities that actually work in your
                 workflows.
               </p>
-              <p className="text-sm leading-relaxed text-white/65">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 Our squads embed alongside yours, bringing reusable accelerators for auth, payments, analytics, and
                 agent tooling. Less time rebuilding foundations, more time shipping features that matter.
               </p>
-              <div className="flex flex-wrap gap-3 text-xs text-white/70">
+              <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
                 {["Delivery pods", "Design + build + operate", "AI-native", "Compliance-aware", "Global"].map(
                   (chip) => (
-                    <span key={chip} className="rounded-full border border-white/15 px-3 py-1">
+                    <span key={chip} className="rounded-full border border-border px-3 py-1">
                       {chip}
                     </span>
                   ),
@@ -82,7 +82,7 @@ export default function AboutPage() {
             <div className="card relative overflow-hidden p-6">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(59,130,246,0.15),transparent_30%)]" />
               <div className="relative space-y-4">
-                <h3 className="text-sm uppercase tracking-[0.2em] text-white/60">Snapshot</h3>
+                <h3 className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Snapshot</h3>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {[
                     { label: "Projects shipped", value: "120+" },
@@ -90,9 +90,9 @@ export default function AboutPage() {
                     { label: "AI agents live", value: "60+" },
                     { label: "Commerce GMV", value: "$250M+" },
                   ].map((item) => (
-                    <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                      <p className="text-xs text-white/60">{item.label}</p>
-                      <p className="text-xl font-semibold text-white">{item.value}</p>
+                    <div key={item.label} className="rounded-2xl border border-border bg-muted/20 p-4">
+                      <p className="text-xs text-muted-foreground">{item.label}</p>
+                      <p className="text-xl font-semibold text-foreground">{item.value}</p>
                     </div>
                   ))}
                 </div>
@@ -104,8 +104,8 @@ export default function AboutPage() {
 
       <section className="shell py-16">
         <AnimatedSection className="text-center mb-10">
-          <h2 className="text-[clamp(28px,4vw,38px)] font-bold text-white">Our values</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/60">
+          <h2 className="text-[clamp(28px,4vw,38px)] font-bold text-foreground">Our values</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Principles that keep every engagement focused on outcomes and quality.
           </p>
         </AnimatedSection>
@@ -122,8 +122,8 @@ export default function AboutPage() {
                 transition={{ type: "spring", stiffness: 320, damping: 28 }}
               >
                 <div className="text-2xl">{value.icon}</div>
-                <h3 className="mt-3 text-lg font-semibold text-white">{value.title}</h3>
-                <p className="text-sm leading-relaxed text-white/65">{value.desc}</p>
+                <h3 className="mt-3 text-lg font-semibold text-foreground">{value.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{value.desc}</p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -132,8 +132,8 @@ export default function AboutPage() {
 
       <section className="shell pb-20 pt-10">
         <AnimatedSection className="text-center mb-10">
-          <h2 className="text-[clamp(28px,4vw,38px)] font-bold text-white">Teams behind the work</h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-white/60">
+          <h2 className="text-[clamp(28px,4vw,38px)] font-bold text-foreground">Teams behind the work</h2>
+          <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Cross-functional squads that cover design, build, and operate.
           </p>
         </AnimatedSection>
@@ -146,14 +146,14 @@ export default function AboutPage() {
                 transition={{ type: "spring", stiffness: 320, damping: 28 }}
               >
                 <div className={`relative h-40 bg-gradient-to-br ${member.color}`}>
-                  <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white/70">
+                  <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-muted-foreground">
                     {member.initials}
                   </div>
                 </div>
                 <div className="space-y-1 p-5">
-                  <h3 className="text-lg font-semibold text-white">{member.name}</h3>
-                  <p className="text-xs uppercase tracking-[0.2em] text-white/50">{member.role}</p>
-                  <p className="text-sm leading-relaxed text-white/65">{member.description}</p>
+                  <h3 className="text-lg font-semibold text-foreground">{member.name}</h3>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{member.role}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{member.description}</p>
                 </div>
               </motion.div>
             </AnimatedSection>
@@ -162,24 +162,24 @@ export default function AboutPage() {
       </section>
 
       <section className="shell pb-20">
-        <div className="card flex flex-col items-center gap-4 bg-gradient-to-br from-white/[0.04] via-white/[0.02] to-transparent p-10 text-center">
-          <div className="text-[11px] uppercase tracking-[0.18em] text-white/60">Let’s build together</div>
+        <div className="card flex flex-col items-center gap-4 bg-gradient-to-br from-muted/[0.04] via-muted/[0.02] to-transparent p-10 text-center">
+          <div className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Let’s build together</div>
           <h3 className="text-[clamp(28px,3vw,36px)] font-bold leading-tight">
             Ready to ship your next product?
           </h3>
-          <p className="max-w-2xl text-sm leading-relaxed text-white/60">
+          <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Tell us about your idea, migration, or scaling challenge. We’ll assemble the right pod and start in days.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
               href="/contact"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
               Start a project
             </a>
             <a
               href="/careers"
-              className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
+              className="rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-border hover:bg-muted/20"
             >
               Join the team
             </a>

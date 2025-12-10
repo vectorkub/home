@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Button } from "./ui/button"
 import Logo from "./logo"
+import { ThemeMenu } from "./theme-menu"
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -28,14 +29,14 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-200 ${isScrolled
-        ? "bg-black/85 backdrop-blur-2xl border-b border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.35)]"
-        : "bg-black/70 backdrop-blur-2xl"
+        ? "bg-background/85 backdrop-blur-2xl border-b border-border shadow-sm"
+        : "bg-background/70 backdrop-blur-2xl"
         }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1420px] items-center justify-between px-6 lg:px-8">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-2">
-            <Logo className="h-7 w-7 text-white" />
+            <Logo className="h-7 w-7" />
           </Link>
 
           <div className="hidden items-center gap-6 md:flex">
@@ -43,7 +44,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-white/70 transition-colors hover:text-white"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.title}
               </Link>
@@ -52,21 +53,25 @@ export default function Navigation() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
+          <ThemeMenu />
           <Link
             href="/contact"
-            className="rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-white/80 transition hover:border-white/40 hover:text-white"
+            className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground/80 transition hover:border-foreground/40 hover:text-foreground"
           >
             Contact
           </Link>
-          <Button className="h-9 rounded-full bg-white/90 px-4 text-xs font-semibold text-black transition hover:bg-white">
-            Dashboard
+          <Button 
+            className="h-9 rounded-full bg-foreground px-4 text-xs font-semibold text-background transition hover:bg-foreground/90"
+            onClick={() => window.open(process.env.NEXT_PUBLIC_ACCOUNT_CENTER_URL || 'https://account.vectorkub.com', '_blank')}
+          >
+            Account Center
           </Button>
         </div>
 
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="rounded-full border border-white/10 p-2 text-white hover:border-white/40"
+            className="rounded-full border border-border p-2 text-foreground hover:border-foreground/40"
           >
             <svg
               className="h-5 w-5"
@@ -84,26 +89,32 @@ export default function Navigation() {
       </div>
 
       {isOpen && (
-        <div className="border-t border-white/10 bg-black/90 backdrop-blur-2xl md:hidden">
+        <div className="border-t border-border bg-background/90 backdrop-blur-2xl md:hidden">
           <div className="mx-auto max-w-[1420px] px-6 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block rounded-xl px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-white"
+                className="block rounded-xl px-4 py-3 text-sm text-foreground/80 transition hover:bg-foreground/5 hover:text-foreground"
               >
                 {link.title}
               </Link>
             ))}
-            <div className="mt-4 space-y-2 border-t border-white/10 pt-4">
+            <div className="mt-4 space-y-2 border-t border-border pt-4">
+              <div className="px-4">
+                <ThemeMenu />
+              </div>
               <Link
                 href="/contact"
-                className="block rounded-xl px-4 py-3 text-sm text-white/80 transition hover:bg-white/5 hover:text-white"
+                className="block rounded-xl px-4 py-3 text-sm text-foreground/80 transition hover:bg-foreground/5 hover:text-foreground"
               >
                 Contact
               </Link>
-              <Button className="w-full rounded-full bg-white/90 py-3 text-sm font-semibold text-black transition hover:bg-white">
-                Dashboard
+              <Button 
+                className="w-full rounded-full bg-foreground py-3 text-sm font-semibold text-background transition hover:bg-foreground/90"
+                onClick={() => window.open(process.env.NEXT_PUBLIC_ACCOUNT_CENTER_URL || 'https://account.vectorkub.com', '_blank')}
+              >
+                Account Center
               </Button>
             </div>
           </div>
